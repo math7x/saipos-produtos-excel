@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Cadastro de Produtos Saipos por Excel",
+  "version": "1.0.9",
+  "description": "Importe produtos e opções de uma planilha, usando grupos já cadastrados na Saipos.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://conta.saipos.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cadastro Saipos por Excel"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://conta.saipos.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

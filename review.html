@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Revisar produtos — Saipos</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f7fa;color:#202124;font:14px Arial,sans-serif}header{padding:22px 28px;background:#fff;border-bottom:1px solid #dfe4ea}h1{font-size:22px;color:#173b67;margin:0 0 7px}header p{margin:0;color:#5f6368}.wrap{padding:20px 28px}.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}.bar button{border:0;border-radius:7px;background:#1676d2;color:white;font-weight:bold;padding:11px 18px;cursor:pointer}.bar button:disabled{background:#aab5c1;cursor:default}.counter{font-weight:bold}.hint{color:#5f6368}.tablebox{overflow:auto;background:#fff;border:1px solid #d8e0ea;border-radius:9px}table{border-collapse:collapse;min-width:1180px;width:100%}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid #e8edf2;vertical-align:top}th{position:sticky;top:0;background:#eaf1f8;color:#173b67}td select{width:100%;padding:7px;border:1px solid #c6d0db;border-radius:5px;background:white}td input[type=checkbox]{width:auto}tr.error{background:#fff5f4}.status{min-width:140px;font-size:12px}.good{color:#137333}.bad{color:#b3261e}.warn{color:#9a6700}.chip{display:inline-block;border-radius:12px;padding:3px 8px;background:#edf2f7;margin:2px}.footer{margin-top:14px;color:#5f6368}.stop{background:#a33!important}
+</style>
+</head>
+<body>
+<header>
+  <h1>Revisão do cadastro Saipos</h1>
+  <p>Revise os produtos e clique para cadastrar todos os selecionados automaticamente.</p>
+</header>
+<main class="wrap">
+  <div class="bar"><button id="loadCategories">Carregar categorias da Saipos</button><span id="categoryStatus" class="hint">Abra o Saipos para buscar as categorias.</span></div>
+  <div class="bar"><button id="start" disabled>Cadastrar selecionados</button><button id="stop" class="stop" disabled>Parar lote</button><span id="overall" class="counter"></span></div>
+  <div class="tablebox">
+    <table>
+      <thead><tr><th><input id="all" type="checkbox" checked></th><th>Produto</th><th>Preço</th><th>Categoria</th><th>Descrição para o site</th><th>Disponibilidade</th><th>Grupo de opção</th><th>Validação</th><th>Resultado</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p class="footer">O primeiro uso de cada grupo procura o nome na Saipos. Se não existir, a extensão cria o grupo com uma opção provisória chamada “teste” (mínimo 1, máximo 1). Os produtos seguintes com o mesmo nome reutilizam esse grupo.</p>
+</main>
+<script src="review.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cadastro Saipos por Excel</title>
+  <style>
+    *{box-sizing:border-box} body{width:360px;margin:0;padding:18px;font:14px Arial,sans-serif;color:#202124;background:#f7f9fc}
+    h1{font-size:18px;margin:0 0 8px;color:#173b67} p{line-height:1.45;margin:8px 0 14px}.card{background:#fff;border:1px solid #d8e0ea;border-radius:10px;padding:14px;margin:12px 0}
+    input[type=file]{width:100%;margin:8px 0 12px} button{width:100%;border:0;border-radius:7px;padding:11px;background:#1676d2;color:white;font-weight:bold;cursor:pointer} button:disabled{background:#aab5c1;cursor:default}
+    #status{display:none;padding:10px;border-radius:7px;line-height:1.4;background:#edf2f7}.ok{background:#e6f4ea!important;color:#137333}.err{background:#fce8e6!important;color:#b3261e}
+    small{color:#5f6368}
+  </style>
+</head>
+<body>
+  <h1>Cadastro de produtos Saipos</h1>
+  <p>Carregue o modelo Excel. A planilha será validada e aberta numa tela de revisão antes de qualquer cadastro.</p>
+  <div class="card">
+    <label for="file"><strong>Planilha Excel (.xlsx)</strong></label>
+    <input id="file" type="file" accept=".xlsx">
+    <button id="review" disabled>Validar e revisar produtos</button>
+  </div>
+  <div id="status"></div>
+  <small>Os dados são processados localmente no navegador.</small>
+  <script src="lib/xlsx.core.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

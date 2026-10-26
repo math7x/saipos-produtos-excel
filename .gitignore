@@ -1,0 +1,7 @@
+# Planilhas operacionais e modelos locais podem conter dados de clientes.
+*.xlsx
+*.xls
+
+# Artefatos do sistema e do editor.
+Thumbs.db
+Desktop.ini
